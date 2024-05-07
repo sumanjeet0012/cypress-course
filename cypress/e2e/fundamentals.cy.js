@@ -1,6 +1,6 @@
 describe('Fundamentals test', () => {
-  it('passes', () => {
-    cy.visit('http://localhost:3000/fundamentals')
+  it('Contains correct header text', () => {
+    cy.visit('/fundamentals')
     cy.get('[data-test="fundamentals headers"]').contains(/Testing Fundamentals/i)
     cy.get('[data-test="fundamentals headers"]').should('contain.text', 'Testing Fundamentals' )
   })
