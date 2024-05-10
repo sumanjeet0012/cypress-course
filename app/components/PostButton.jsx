@@ -6,14 +6,16 @@ export default function PostButton(){
 
     function handleClick(){
         fetch('http://localhost:3000/examples', {method: 'POST'}).then((data) => {
-            console.log({data})
+            data.json().then((data2) => {
+                console.log({data2})
+            })
         }).catch(() => {
             console.log('An error occured')
         })
     }
 
     return (
-        <Button onClick={handleClick}>
+        <Button data-test="post-button" onClick={handleClick}>
             Post Data
         </Button>
     )
